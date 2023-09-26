@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+ 
+    <title>22DH114114</title>
+    <style>
+        #trai {
+            background-color: gray;
+            width: 60%;
+            height: 800px;
+            float: left;
+        }
+
+        #phai {
+            background-color: pink;
+            width: 40%;
+            height: 800px;
+            float: left;
+        }
+
+        .a {
+            display: inline-block;
+            width: 250px;
+            margin: 30px;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div id=trai>
+        <h1>Giỏ Hàng</h1>
+        <div class="a">
+            <p>Nhập số lượng:</p>
+            <input type="number" id="numOfGoods" min="0">
+            <p>Nhập giá tiền:</p>
+            <input type="number" id="pricePerGood" min="0" step="0.01">
+            <button onclick="calculateTotal()">Tính</button>
+
+        </div>
+    </div>
+    <div id=phai>
+        <h4 id="total">Tổng giá tiền: 0</h4>
+        
+        <p id="total"></p>
+        <script>
+            function calculateTotal() {
+                var numOfGoods = document.getElementById("numOfGoods").value;
+                var pricePerGood = document.getElementById("pricePerGood").value;
+                var total = numOfGoods * pricePerGood;
+                document.getElementById("total").innerHTML = "Tổng tiền : VND" + total.toFixed(2);
+            }
+        </script>
+        <input type="text" placeholder="Nhập mã giảm giá nếu có">
+        
+    </div>
+</body>
+</html>
